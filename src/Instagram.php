@@ -564,6 +564,9 @@ class Instagram
     /**
      * The call operator.
      *
+     * Set the auth mode default to true so it will try to use the accessToken
+     * Which is always recommended
+     *
      * @param string $function API resource path
      * @param bool $auth Whether the function requires an access token
      * @param array $params Additional request parameters
