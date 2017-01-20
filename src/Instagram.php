@@ -573,7 +573,7 @@ class Instagram
      *
      * @throws \MetzWeb\Instagram\InstagramException
      */
-    protected function _makeCall($function, $auth = false, $params = null, $method = 'GET')
+    protected function _makeCall($function, $auth = true, $params = null, $method = 'GET')
     {
         if (!$auth) {
             // if the call doesn't requires authentication
