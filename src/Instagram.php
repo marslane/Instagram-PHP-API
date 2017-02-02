@@ -627,8 +627,11 @@ class Instagram
         // convert header content into an array
         $headers = $this->processHeaders($headerContent);
 
+        // set all keys to lower
+        array_change_key_case ( $headers, CASE_LOWER);
+
         // get the 'X-Ratelimit-Remaining' header value
-        $this->_xRateLimitRemaining = $headers['X-Ratelimit-Remaining'];
+        $this->_xRateLimitRemaining = isset($headers['x-ratelimit-remaining']) ? $headers['x-ratelimit-remaining'] : null;
 
         if (!$jsonData) {
             throw new InstagramException('Error: _makeCall() - cURL error: ' . curl_error($ch));
