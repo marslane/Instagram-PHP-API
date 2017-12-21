@@ -502,6 +502,18 @@ class Instagram
     }
 
     /**
+     * Get Location by Facebook ID
+     *     
+     * @param int Place ID
+     *
+     * @return mixed
+     */
+    public function searchLocationByFacebookPlaceId($facebook_place_id) {
+    	
+    	return $this->_makeCall( 'locations/search', false, ['facebook_places_id' => $facebook_place_id]);
+    }
+    
+    /**
      * Pagination feature.
      *
      * @param object $obj Instagram object returned by a method
@@ -537,6 +549,7 @@ class Instagram
 
         throw new InstagramException("Error: pagination() | This method doesn't support pagination.");
     }
+
 
     /**
      * Get the OAuth data of a user by the returned callback code.
